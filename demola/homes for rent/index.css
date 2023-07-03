@@ -1,0 +1,730 @@
+
+*{ 
+    box-sizing: border-box;
+    font-family:sans-serif;
+    scroll-behavior: smooth;
+}
+body,html{ 
+    padding: 0;
+    margin: 0;
+}
+.container,.home{ 
+    width: 100%;
+}
+
+
+.home{ 
+    background-color:rgb(114, 114, 228);
+    
+}
+/* .......................................styling the navigation bar.................................. */
+.container .home nav{ 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding:2%;
+    background-color:rgb(114, 114, 228);
+    /* box-shadow: 0 0 30px rgb(55, 55, 145); */
+    overflow: hidden;
+    transition: all 750ms ease;
+    resize: both;
+    
+}
+.container .home nav .logo{ 
+    text-transform: uppercase;
+    color: white;
+    width: 50%;
+}
+.container .home nav .bar{ 
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    display: none;
+}
+.bi-list,.bi-x{ 
+    font-size: 40px;
+}
+ .media{ 
+    
+    padding: 0px 20px;
+    text-transform: capitalize;
+    width: 30%;
+    text-align: center;
+    color: white;
+    border: 2px solid white;
+    transition: all 750ms ease;
+    cursor: pointer;
+    
+}
+ .media:hover{ 
+    background-color:rgb(255, 212, 23);
+}
+.container .home nav ul{ 
+    width: 100%;
+    
+}
+.container .home nav ul li{ 
+    display: inline-block;
+    padding: 0% 5%;
+    text-transform: capitalize;
+    
+}
+.container .home nav ul li::after{ 
+    content: "";
+    height: 5px;
+    display: block;
+    width: 0%;
+    background-color:rgb(255, 212, 23) ;
+    margin: 0% auto;
+    border-radius: 5px;
+    transition: all 750ms ease;
+}
+.container .home nav ul li:hover::after{ 
+    width: 100%;
+}
+ ul li a{ 
+    color: white;
+    text-decoration: none;
+    transition: all 750ms ease;
+}
+ ul li a:hover{ 
+    color:rgb(255, 212, 23) ;
+}
+
+
+/* ......................................making the navigation bar responsive............................... */
+
+
+@media all and (max-width:880px){ 
+    .container .home nav{ 
+        flex-direction: column;
+        width:100%;
+        height:10vh;
+        transition: all 750ms ease;
+        position: fixed;
+         box-shadow: 0 0 30px rgb(55, 55, 145);
+         z-index: 1;
+    }
+    .container .home nav ul li{ 
+        display: block;
+        padding: 5%;
+    }
+    .container .home nav ul{ 
+        position: relative;
+        left: 100%;
+        transition: all 750ms ease;
+        margin: 0;
+    }
+    .container .home nav .media{ 
+        width: 100%;
+        position: relative;
+        left: 150%;
+        transition: all 750ms ease;
+    }
+    .container .home nav ul li::after{ 
+        margin: 0%;
+        
+    }
+    .container .home nav ul li:hover::after{ 
+        width: 30%;
+    }
+    .container .home nav .bar{ 
+        display: block;
+    }
+    .container .home nav .logo{ 
+        width: 100%;
+    }
+}
+
+
+/* .................................styling the home section...................................... */
+
+
+.content{ 
+    padding: 5%;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  
+}
+.content .mini{ 
+    width: 100%;
+    margin: 0% 1%;
+}
+.content .mini:nth-child(2){ 
+    background-color:rgb(255, 212, 23) ;
+    padding-top: 5%;
+    padding-right: 1%;
+    
+
+}
+.content .mini .media{ 
+    width: 50%;
+}
+.content .mini img{ 
+    width: 100%;
+    position: relative;
+    left: -3%;
+}
+.content .mini .video{ 
+    position: relative;
+    top: -100px;
+    color: white;
+    font-size: 20px;
+    
+}
+.content .mini .video p span{ 
+    color: black;
+    font-size: 30px;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: white;
+    cursor: pointer;
+}
+.content .mini h1 span{ 
+    color:rgb(255, 212, 23) ;
+}
+
+
+/* .......................................making the home section responsive.................................... */
+@media all and (max-width:880px){ 
+    .content{ 
+        flex-direction: column;
+        padding-top: 100px;
+    }
+    .content .mini{ 
+        margin: 5% auto;
+    }
+}
+
+
+/* ..........................................styling thr renting section..................................... */
+.content2{ 
+    width: 100%;
+    background-color:white;
+    padding: 5%;
+    
+}
+.form{ 
+    background-color: white;
+    box-shadow: 0 0 30px grey;
+    padding: 3%;
+    color: blue;
+    position: relative;
+    top: -100px;
+}
+
+.form .flex{ 
+    width: 100%;
+    display: flex;
+   
+    margin: 0% auto;
+   
+}
+.form .flex .mini{ 
+    width:50%;
+    margin: 0 auto;
+}
+.form .flex .mini select{ 
+    width: 80%;
+    padding: 5% 10%;
+}
+.form .flex .media{ 
+    background-color:rgb(255, 212, 23) ;
+    margin: 0;
+    padding: 0;
+    width:30%;
+}
+.form .flex .media h1{ 
+    font-size: 16px;
+}
+
+
+/* .....................................making the renting section responsive................................ */
+
+@media all and (max-width:880px){ 
+    .form .flex{ 
+        flex-direction: column;
+    }
+    .form .flex .mini{ 
+        width: 100%;
+        margin: 5% auto;
+    }
+    .form .flex .mini select,.media{ 
+        width: 100%;
+    }
+    .form{ 
+        top: 0;
+        width: 100%;
+    }
+}
+
+
+/* ................................styling the most popular home section....................................... */
+
+.content3{ 
+    width: 100%;
+    padding:5%;
+    position: relative;
+    top: -200px;
+    
+}
+.content3 .header{ 
+    width: 100%;
+    font-size: 13px;
+}
+
+.content3 .header2{ 
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0% auto;
+    text-transform: capitalize;
+    font-size: 10px;
+}
+
+.content3 .header2 h1:nth-child(2){ 
+    cursor: pointer;
+}
+
+.content3 .header h1{
+    text-transform: uppercase;
+}
+.content3 .flex{ 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0% auto;
+}
+.content3 .flex .mini{ 
+    width: 100%;
+    margin: 0% 1%;
+    background-color: white;
+}
+.content3 .flex .mini .details{ 
+    padding: 5%;
+    width: 100%;
+    margin: 0;
+}
+.content3 .flex .mini .details ul{ 
+    list-style-type: none;
+    width: 100%;
+}
+.content3 .flex .mini .details ul li{ 
+    display: inline-block;
+    padding:2%;
+    
+}
+.content3 .flex .mini .image{ 
+    width: 100%;
+    position:relative;
+    cursor:pointer;
+}
+.content3 .flex .mini .image:hover .brief{ 
+    width:100%;
+    
+    height: 100%;
+}
+.content3 .flex .mini .image .brief{ 
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8));
+    width:0%;
+    height:0%;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition:0.5s;
+}
+.content3 .flex .mini .image img{ 
+   width: 100%;
+}
+.content3 .flex .mini .details .amount{ 
+    display: flex;
+    color: black;
+    width: 100%;
+   justify-content: space-between;
+}
+
+.content3 .flex .mini .details .amount .media{ 
+    background-color: rgb(255, 212, 23);
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+.content3 .flex .mini .details .amount .media:nth-child(2){ 
+    background-color: transparent;
+    color: black;
+    font-size: 18px;
+    cursor:text;
+}
+
+.content3{ 
+    width: 100%;
+    margin: 0% auto;
+}
+.content3 .media{ 
+    width: 100%;
+    text-align: left;
+    margin: 5% auto;
+    border: none;
+}
+.content3 .media ul{ 
+    width: 100%;
+    list-style-type: none;
+}
+.content3 .media ul li{ 
+    padding: 0% 10%;
+    display: inline-block;
+}
+.content3 .media ul li a{ 
+    color: white;
+    font-size: 30px;
+    transition: all 750ms ease;
+}
+.content3 .media ul li a:hover{ 
+    color:rgb(255, 212, 23)  ;
+}
+.content3 .media:hover{ 
+    background-color: transparent;
+}
+
+
+/* ................................making the most popular home section responsive........................... */
+
+@media all and (max-width:880px){ 
+    .content3 .flex{ 
+        flex-direction: column;
+    }
+    .content3{ 
+        top: 0;
+    }
+    .content3 .flex .mini{ 
+        margin: 5% auto;
+    }
+    .content3 .flex .mini .details .amount{ 
+        flex-direction: column;
+    }
+    .content3 .header2{ 
+        width: 100%;
+        margin: 0;
+        flex-direction: column;
+    }
+    .content3 .media ul li{ 
+        padding: 0% 5%;
+    }
+}
+
+
+
+/* .................................styling the service section............................................ */
+.services{ 
+    width: 100%;
+    background-color: white;
+    padding: 5%;
+    margin-top: -150px;
+}
+.services .flex{ 
+    width: 100%;
+    margin: 0% auto;
+}
+.services .flex .mini{ 
+    width: 48%;
+    margin: 0% 1%;
+    float: right;
+    
+}
+.services .flex .flex{ 
+    float: left;
+    display: flex;
+    width: 50%;
+    margin: 0;
+    /* margin-top: -300px; */
+}
+
+.services .flex .flex .mini{ 
+    width: 100%;
+}
+.services .flex .flex .mini img{ 
+    width:100%;
+}
+.services .flex .mini:nth-child(1){ 
+    margin-top: 5%;
+}
+.services .flex .flex .mini:nth-child(2) img{ 
+    width: 200px;
+    height: 380px;
+}
+.services .flex .mini ul{ 
+    width: 70%;
+    list-style-type: none;
+    text-align: left;
+}
+.services .flex .mini p:nth-child(2){ 
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.services .flex .mini ul li{ 
+    display: inline-block;
+    padding: 2%;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.services .flex .mini h1{ 
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.services .flex .mini .media{ 
+    width: 50%;
+    color: white;
+    background-color: rgb(255, 212, 23) ;
+}
+
+
+/* .................................................makking the service section responsive.......................... */
+@media all and (max-width:880px){ 
+    .services{ 
+        margin: 0% auto;
+    }
+    .services .flex .mini{ 
+        float: left;
+        width: 100%;
+    }
+    .services .flex .flex{ 
+        width: 100%;
+        flex-direction: column;
+    }
+    .services .flex .mini{ 
+        margin: 5% auto;
+        
+    }
+    .services .flex .flex .mini:nth-child(2) img{ 
+        width: 100%;
+    }
+
+    .services .flex .mini ul li{ 
+        display: block;
+        padding: 5%;
+    }
+}
+
+
+/* .......................styling the blog section................................................. */
+.blog{ 
+    background-color: white;
+    width: 100%;
+    padding-top:30%;
+    
+}
+.blog .content{ 
+    display: grid;
+
+}
+.blog .content .flex{ 
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.blog .content .flex .media{ 
+    background-color:rgb(255, 212, 23) ;
+    width: 50%;
+    margin: 15% auto;
+}
+.media{ 
+    opacity: 0.7;
+    transition: all 750ms ease;
+}
+.media:hover{ 
+    opacity: 1;
+}
+.blog .content .flex .mini h1 span{ 
+    color: black;
+}
+.blog .content .flex .mini { 
+    background-color: transparent;
+    width: 100%;
+}
+.blog .content .flex .mini .details ul{
+    width: 50%;
+    padding: 5%;
+ }
+.blog .content .flex .mini .image img{ 
+    width: 100%;
+}
+.blog .content .flex .mini .details .media{ 
+    width: 50%;
+    margin: 0;
+}
+.content .details{ 
+    width: 100%;
+    margin: 5% auto;
+    
+}
+.content .details form{ 
+    display: flex;
+    width: 100%;
+}
+.content .details input{ 
+    padding: 1%;
+    width: 30%;
+    outline: none;
+    font-size: 20px;
+    margin: 0% 1%;
+}
+.content .details input::placeholder{ 
+    font-size: 16px;
+}
+.content .details input[type="submit"]{ 
+    width: 15%;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(255, 212, 23) ;
+    color: white;
+}
+
+/* ........................making the blog section responsive.......................................... */
+@media all and (max-width:880px){ 
+    .blog .content .flex{ 
+        flex-direction: column;
+        margin: 4%;
+    }
+    .blog .content .flex .mini{ 
+        margin: 0%;
+    }
+    .blog .content .flex .mini .media{ 
+        margin: 0%;
+    }
+    .blog .content .flex:nth-child(2) .mini{ 
+        margin: 10% auto;
+    }
+    .content .details form{ 
+        flex-direction: column;
+    }
+    .content .details input{ 
+        width: 100%;
+        margin: 2% 0%;
+    }
+    .content .details input[type="submit"]{ 
+        width: 100%;
+    }
+   
+}
+
+/* .............................................styling the comment section................................. */
+.about{ 
+    width: 100%;
+    color: white;
+    padding: 5%;
+}
+
+.about .header{ 
+    width: 100%;
+    text-transform: capitalize;
+    
+}
+.about .flex { 
+    display: flex;
+    width: 100%;
+    margin: 10% auto;
+}
+.about .flex .mini{ 
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+.about .flex .mini .details{ 
+    width: 100%;
+    margin:0% 2%;
+}
+.about .flex .mini .details p:nth-child(1){ 
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+.about .flex .mini .image { 
+    width: 100%;
+    margin:0% 2%;
+}
+.about .flex .mini .image img{ 
+    width: 100%;
+}
+
+
+/* ..............................................making the about section responsive.................................. */
+@media all and (max-width:880px){ 
+    .about .flex{ 
+        flex-direction: column;
+    }
+    .about .flex .mini{ 
+        flex-direction: column;
+    }
+}
+
+
+
+/* ....................................styling the footer section.................................... */
+
+.footer{ 
+    width: 100%;
+    padding: 5%;
+    background-color: rgb(47, 47, 206);
+}
+ .footer> ul{ 
+    width: 100%;
+    text-align: center;
+    
+    
+}
+.footer >ul li{ 
+    padding: 3%;
+    list-style-type: none;
+    display: inline-block;
+    font-size: 20px;
+} 
+.footer .flex{ 
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0% auto;
+}
+.footer .flex .mini ul{ 
+    width: 100%;
+    list-style-type: none;
+}
+.footer .flex .logo{
+    width: 100%;
+    color: white;
+    /* font-size: 20px; */
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+.footer .flex .mini { 
+    width: 100%;
+}
+.footer .flex .mini ul li{ 
+    padding: 5%;
+    text-transform:capitalize;
+}
+.footer .flex .mini ul li:nth-child(1){ 
+    color: white;
+    font-size: 25px;
+  
+}
+
+
+/* ....................................making the footer section responsive............................. */
+
+@media all and (max-width:880px){ 
+    .footer .flex{ 
+        flex-direction: column;
+    }
+    .footer> ul{ 
+        text-align: left;
+    }
+}

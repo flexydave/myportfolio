@@ -1,0 +1,741 @@
+    *{ 
+        box-sizing: border-box;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body,html{ 
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        position: relative;
+        margin: 0 auto;
+        
+    }
+/* body{ 
+    width: fit-content;
+    margin: 0 auto;
+} */
+
+/* ..............................styling the nav bar............................................ */
+.container{ 
+    width: 100%;
+    background-color: rgb(199, 72, 72);
+    position:relative;
+    top: -10px;
+    height: 100vh;
+}
+.nav{ 
+    width: 100%;
+    position: relative;
+}
+.nav nav{ 
+   
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding:0% 10% ;
+    background-color: brown;
+    color: white;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 0 5px brown;
+    z-index: 1;
+}
+.nav nav .logo p{ 
+    font-weight:700;
+}
+
+.nav nav .icon{ 
+    position: absolute;
+    right: 0;
+    font-size: 40px;
+    cursor: pointer;
+    display: none;
+}
+.nav nav .links ul{ 
+    width: 100%;
+}
+.nav nav .links ul li{ 
+    display: inline-block;
+    padding: 0 20px;
+}
+ a{ 
+    color:white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.nav nav .links ul li a:hover{ 
+    color: rgb(175, 169, 169);
+}
+@media all and (max-width:880px){
+    .nav nav{ 
+        
+        flex-direction: column;
+        overflow: hidden;
+        width: 100%;
+        height:50px;
+        transition: 0.5s;
+    }
+    .nav nav .links{ 
+        
+        text-align: center;
+       
+    } 
+    .nav nav .links ul li{ 
+        display: block;
+        padding: 7px;
+    }
+    .nav nav .icon{ 
+        display: block;
+    }
+}
+/* .......................................styling the content page ............................................ */
+.container>.content{ 
+    padding:0% 10% 5%;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    position: relative;
+    animation: fade 2s 1;
+    
+}
+/* @keyframes fade{ 
+    from{ 
+        width: 0%;
+       
+    }
+    to{ 
+        width: 100%;
+        
+    }
+} */
+.container>.content>.image{ 
+    position: absolute;
+    top: 0;
+    right: 0;
+  
+}
+.container>.content>.image .cover{ 
+    width: 80%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    border-radius: 5px;
+    background:linear-gradient(rgba(97, 35, 35, 0.5),rgba(160, 64, 64, 0.7));
+}
+.container>.content>.image img{ 
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+}
+
+
+.container>.content .info p span{ 
+    font-size:initial;
+    font-size: 20px;
+}
+.container>.content .info p{ 
+    font-size: 60px;
+    text-transform: capitalize;
+    width: fit-content;
+}
+.container>.content>.flex{ 
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.container>.content>.flex .mini{ 
+    background-color: rgb(139, 37, 37);
+    width:100%;
+    display: flex;
+    margin: 2%;
+    border-radius: 10px;
+    /* font-size: 20px;  */
+    text-transform:uppercase;
+    font-weight: normal;
+    padding: 5px;
+   
+}
+.container>.content>.flex .mini p:nth-child(1){ 
+    font-size:30px;
+    font-weight:bold;
+}
+.container>.content>.flex .mini p{ 
+    margin: 2% 5%;
+}
+.resume{ 
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    width:50%;
+}
+.resume .mini{ 
+    margin: 0 5px;
+    text-transform: capitalize;
+}
+.resume:hover .mini p a{ 
+    color: rgb(175, 169, 169);
+}
+.resume:hover .mini:nth-child(1){ 
+    width: 20px;
+}
+.resume .mini:nth-child(1){ 
+    width: 50px;
+    height: 2px;
+    background-color: white;
+    position: relative;
+    top: 30px;
+    transition: 0.5s;
+}
+
+@media all and (max-width:880px){ 
+    .container>.content>.flex{ 
+        flex-direction: column;
+        width: 100%;
+    }
+    .container>.content>.flex .mini{ 
+        width: 80%;
+      
+    }
+    .resume{ 
+        width: 100%;
+    }
+    .container>.content .info p{ 
+        font-size: 40px;
+    }
+}
+
+/* ...............................styling the expertise section....................................... */
+.expertise{ 
+    width: 100%;
+    padding: 5% 10%;
+    position: relative;
+    display: flex;
+  
+}
+
+.expertise>.image img{ 
+    width: 80%;
+    height:80%;
+}
+.expertise> .content{ 
+    float: right;
+} 
+.expertise> .content .info h1{ 
+    font-size: 30px;
+}
+.expertise> .content .info h1 span{ 
+    color: brown;
+}
+.expertise> .content .flex{ 
+    width: 100%;
+}
+.expertise> .content .flex .mini p{ 
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.expertise> .content .flex .mini p:nth-child(2){ 
+    width: 100%;
+    height: 3px;
+    background-color: rgb(236, 227, 227);
+    position: relative;
+}
+.expertise> .content .flex .mini p:nth-child(2) > b{ 
+    width: 0%;
+    height: 3px;
+    background-color: brown;
+    position: absolute;
+    transition: 2.5s;
+}
+.expertise> .content .flex .mini:nth-child(2) p:nth-child(2) > b{ 
+    width: 0%;
+    height: 3px;
+    background-color: brown;
+    position: absolute;
+    transition: 2s;
+}
+.expertise> .content .flex .mini:nth-child(3) p:nth-child(2) > b{ 
+    width: 0%;
+    height: 3px;
+    background-color: brown;
+    position: absolute;
+    transition: 1s;
+}
+.expertise> .content .flex .mini:nth-child(4) p:nth-child(2) > b{ 
+    width: 0%;
+    height: 3px;
+    background-color: brown;
+    position: absolute;
+    transition: 3s;
+}
+.expertise> .content .flex .mini:nth-child(5) p:nth-child(2) > b{ 
+    width: 0%;
+    height: 3px;
+    background-color: brown;
+    position: absolute;
+    transition: 1.5s;
+}
+
+@media all and (max-width:880px){ 
+    .expertise{ 
+        flex-direction: column;
+    }
+    .expertise> .content{ 
+        left: 0;
+        width: 100%;
+        float: left;
+    }
+}
+
+
+
+/* ................................styling the experience section.............................................. */
+
+.experience{ 
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 5% 10%;
+}
+
+.experience> h1{ 
+    text-transform: capitalize;
+    font-size: 45px;
+}
+.experience> .flex{ 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    text-transform: capitalize;
+    border-bottom: 2px solid rgb(141, 138, 138);
+    padding: 0 0 3%;
+  
+}
+.experience> .flex .mini{ 
+    width: 100%;
+}
+.experience> .flex:nth-child(4){ 
+    border-bottom: none;
+}
+.experience> .flex .mini:nth-child(3) p{ 
+        color: grey;
+        font-weight: normal;
+        text-transform:none;
+}
+.experience>.mini{ 
+    background-color: brown;
+    width: 20%;
+    text-align: center;
+    padding: 0.5px 0;
+    text-transform: capitalize;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.experience>.mini:hover{ 
+    background-color: rgb(133, 30, 30);
+}
+
+@media all and (max-width:880px){ 
+    .experience> .flex{ 
+        flex-direction: column;
+    }
+    .experience>.mini{ 
+        width: 100%;
+    }
+}
+
+
+/* ....................................styling the projects page.................................. */
+
+
+.projects{ 
+    padding: 5% 10%;
+}
+.projects .header{ 
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+}
+.projects .header>div p{ 
+    font-weight: bold;
+    font-size: 40px;
+    text-transform: capitalize;
+}
+.projects .header>div{ 
+    width: 100%;
+}
+.projects .header>div:nth-child(2){ 
+    background-color: rgb(219, 55, 55);
+    text-align: center;
+    width: 20%;
+    right: 0;
+    top: 30%;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.projects .header>div:nth-child(2):hover{ 
+    background-color: rgb(133, 30, 30);
+}
+.projects .header>div:nth-child(2) p{ 
+    font-size: initial;
+    text-transform: uppercase;
+}
+
+.projects>.flex{ 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.projects>.flex .mini{ 
+    margin: 0% 1%;
+    cursor: pointer;
+    position: relative;
+}
+.projects>.flex .mini .image{ 
+    width: 100%;
+   
+}
+.projects>.flex .mini .details p{ 
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.projects>.flex .mini .details p span{ 
+    font-size:30px;
+    font-weight: normal;
+    transition: 0.5s;
+    position: absolute;
+    top: -10px;
+    left: 100px;
+}
+.projects>.flex .mini .details p:nth-child(2){ 
+    font-size:initial;
+    text-transform: uppercase;
+    position: relative;
+    opacity: 0;
+    transition: 0.5s;
+    bottom:-10px;
+    color: brown;
+}
+.projects>.flex .mini:hover .details p:nth-child(2){ 
+    bottom: 0;
+    opacity: 1;
+}
+.projects>.flex .details p:nth-child(2) a{ 
+    color: brown;
+}
+.projects>.flex .details p:nth-child(2):hover span{ 
+    left:90px;
+    
+}
+.projects>.flex .mini .image img{ 
+    /* width: 350px;
+    height: 200px; */
+    width: 100%;
+    border-radius: 15px;
+}
+
+
+@media all and (max-width:880px){ 
+    .projects>.flex .mini{ 
+        margin: 5% auto;
+    }
+    .projects .header{ 
+        flex-direction: column;
+
+    }
+    .projects .header>div:nth-child(2){ 
+        position: relative;
+        width: 80%;
+    }
+    .projects>.flex{ 
+        flex-direction: column;
+    }
+    .projects>.flex .mini .image img{ 
+        width: 100%;
+       
+    }
+    .projects>.flex .mini .details p:nth-child(2){ 
+        bottom: 0;
+        opacity: 1;
+
+    }
+}
+
+
+
+/* ...........................................our team styling .................................................. */
+.ourTeam{ 
+    padding: 5% 10%;
+    width: 100%;
+}
+
+.ourTeam > .header h1{ 
+        font-size: 40px;
+        text-transform: capitalize;
+
+}
+.ourTeam > .flex{ 
+    width: 100%;
+    display: flex;
+}
+.ourTeam > .flex .mini{ 
+    width: 100%;
+    margin: 0 2%;
+    text-align: center;
+    text-transform: capitalize;
+}
+.ourTeam > .flex .mini .image{ 
+    width: 100%;
+}
+.ourTeam > .flex .mini .image img{ 
+    width: 100%;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+.ourTeam > .flex .mini .details p{ 
+    color: grey;
+    font-size: small;
+}
+.ourTeam > .flex .mini .details p:nth-child(3){ 
+    color: black;
+    font-size: initial;
+}
+.ourTeam > .flex .mini .details>.flex{ 
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+
+}
+.ourTeam > .flex .mini .details .flex a{ 
+    color: brown;
+    margin: 0 10px;
+    padding: 15px;
+    font-size: 30px;
+    font-weight: normal;
+    /* border-radius: 20px;
+    border: 2px solid brown; */
+    width:20px;
+    height: 20px;
+    /* border: 2px solid brown; */
+}
+
+@media all and (max-width:880px){ 
+    .ourTeam > .flex{ 
+        flex-direction: column;
+    }
+    .ourTeam > .flex .mini{ 
+        margin: 5% auto;
+    }
+    .ourTeam > .flex .mini .image img{ 
+        width: 100%;
+    }
+}
+
+/* ...................................... styling contact page ....................................... */
+
+.contact{ 
+    padding: 5% 10%;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+.contact > .flex{  
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.contact > .flex .mini{ 
+    width: 100%;
+    margin: 0 2%;
+}
+.contact > .flex .mini h1{ 
+    text-transform: capitalize;
+    font-size: 40px;
+    font-weight: normal;
+    font-weight: bold;
+}
+.contact > .flex .mini>p{ 
+    padding: 10px;
+}
+.contact > .flex .mini>p{ 
+    color: rgb(167, 161, 161);
+    text-transform: uppercase;
+}
+.contact > .flex .mini>p:nth-child(2){ 
+    text-transform:none;
+    
+}
+.contact > .flex .mini>p b{ 
+    color: white;
+    text-transform: none;
+    font-size: small;
+}
+.contact > .flex .mini .direction{ 
+    background-color: rgb(177, 172, 172);
+    width: 40%;
+    padding:2%;
+    font-weight: normal;
+    text-align: center;
+    border-radius: 5px;
+    transition: 0.5s;
+    text-transform: capitalize;
+    cursor:pointer;
+    position: relative;
+}
+.direction .map{ 
+    position:fixed;
+    width: 0%;
+    height: 0%;
+    background-color: white;
+    top: 10%;
+    left: 20%;
+    transition: 0.5s;
+}
+.direction .map > span{ 
+    position:relative;
+    font-size: 40px;
+    color: black;
+    display: none;
+}
+.direction .map iframe{ 
+    position: relative;
+    width: 100%;
+}
+.contact > .flex .mini .direction:hover{ 
+    background-color: grey;
+}
+.contact > .flex > .mini:nth-child(2){ 
+    margin-top: 20px;
+}
+.contact > .flex > .mini:nth-child(2) h1{ 
+   font-size:20px;
+}
+.contact > .flex > .mini:nth-child(2) > .form{ 
+    width: 100%;
+}
+.contact > .flex > .mini:nth-child(2) > .form form > .flex{ 
+    display: flex;
+    width: 100%;
+}
+.contact > .flex > .mini:nth-child(2) > .form form > .flex >.mini{ 
+        margin: 2% 1%;
+        width: 100%;
+}
+label{ 
+    text-transform: capitalize;
+    font-size: small;
+    margin: 10px;
+}
+input,textarea{ 
+    padding: 10px;
+    width: 100%;
+    margin: 10px;
+    background-color: rgb(77, 75, 75);
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    transition: 0.5s;
+}
+input::placeholder,textarea::placeholder{ 
+    text-transform: capitalize;
+    color: rgb(165, 159, 159);
+}
+button{ 
+    background-color: rgb(209, 82, 82);
+    color: white;
+    text-transform: capitalize;
+    width: 30%;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    outline: none;
+    border: none;
+    transition: 0.5s;
+    margin: 10px;
+}
+input:focus,textarea:focus{ 
+    background-color: white;
+    outline: 1px solid brown;
+}
+input:hover,textarea:hover{ 
+    outline: 1px solid brown;
+}
+button:hover{ 
+    outline: none;
+}
+
+@media all and (max-width:880px){ 
+    .contact > .flex{ 
+        flex-direction: column;
+    }
+    .contact > .flex > .mini:nth-child(2) > .form form > .flex{ 
+        flex-direction: column;
+    }
+    button{ 
+        width: 100%;
+    }
+    .contact > .flex .mini .direction{ 
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+
+/* ...............................................footer section.................................... */
+
+.footer{ 
+    width: 100%;
+    text-align: center;
+   
+}
+.footer > .flex{ 
+    padding: 5% 10%;
+}
+.footer > .flex > a{ 
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    /* font-size: 20px; */
+    transition: 0.5s;
+    
+}
+.footer > .flex > a:hover{ 
+    background-color: rgb(209, 82, 82);
+}
+.footer > .flex:nth-child(2){ 
+    text-align: left;
+    background-color: black;
+    color: white;
+    padding: 2% 10%;
+    text-transform: capitalize;
+    font-size: small;
+}
+
+.slide{ 
+    overflow: hidden;
+    position: relative;
+    transition: 1s;
+    left: -100%;
+}
+
+.success{  
+    color: green;
+    font-weight: 700;
+    padding: 5px;
+    text-align: center;
+}
+.failed{  
+    color: red;
+    font-weight: 700;
+    padding: 5px;
+    text-align: center;
+}

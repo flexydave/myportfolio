@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{ 
+        width: 100%;
+        z-index: 1;
+        position: relative;
+    }
+    .container .calculator{ 
+       width: 30%;
+        display: grid; 
+        box-shadow: 0 0 30px grey;
+        background-color: rgb(61, 61, 61);
+        width: fit-content;
+    }
+    .container .calculator .flex{ 
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+    }
+
+    .container .calculator .flex .advanced{ 
+        width: 5%;
+        height:100%;
+        position: absolute;
+        background-color: rgb(42, 218, 159);
+        right: 0;
+        transition: all 750ms ease;
+        overflow:hidden;
+        
+         
+    }
+    .container .calculator .flex .advanced span{ 
+        position: absolute;
+        top: 50px;
+        color: white;
+        font-size: 20px;
+        font-weight: 900;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        animation: fade2 1s infinite;
+        cursor: pointer;
+        
+    }
+    @keyframes fade2 {
+        0%{ 
+            opacity: 0.3;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    .container .calculator .flex .advanced table{ 
+        width: 100%;
+        padding: 10%;
+        font-size: 20px;
+        font-family: sans-serif;
+         /* display: none; */
+    }
+    table tr,td{ 
+        padding: 20px;
+        cursor: pointer;
+       
+        
+    }
+   
+  
+    .container .calculator .flex .mini{ 
+        width: 100%;
+        margin-left: 5%;
+    }
+    .container .calculator .flex .mini .numbers{ 
+        display: flex;
+        margin: 25% auto;
+        width: 100%;
+    }
+    .container .calculator .outcome{ 
+        background-color: white;
+        height:250px;
+       padding:0 20px;
+       position: relative;
+    }
+    .container .calculator .outcome .fade{ 
+        width: 0%;
+        height:0%;
+        background-color: blue;
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+        opacity: 0.8;
+        transition: all 750ms ease;
+        border-radius: 0%;
+        
+    }
+
+    .container .calculator .outcome p{ 
+        width:300px;
+        text-overflow:ellipsis;
+        overflow:hidden;
+        font-size: 50px;
+        text-align: right;
+        position: relative;
+        opacity: 1;
+        transition: all 750ms ease;
+    }
+    .container .calculator .outcome p:nth-child(2){ 
+        position: relative;
+        color: grey;
+        font-size: 30px;
+        top: 0;
+        opacity: 1;
+        transition: all 750ms ease;
+    }
+    .container .calculator .flex .mini .numbers button{ 
+        margin-left: 15%;
+        padding: 5%;
+        border-radius: 100%;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 750ms ease;
+        color: white;
+        font-size:1.5rem;
+        
+    }
+    .container .calculator .flex .mini .operators{ 
+        display: grid;
+        width: 100%;
+        background-color: rgb(82, 79, 79);
+    }
+    .container .calculator .flex .mini .operators button{ 
+        padding:16%;
+        border-radius: 100%;
+        margin: 0% auto;
+        font-size: 20px;
+        background-color: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: all 750ms ease;
+    }
+    .container .calculator .flex .mini .numbers button:hover,.container .calculator .flex .mini .operators button:hover{ 
+        background-color: grey;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="outcome">
+                <p  id="outcome">0</p>
+                <p id="result"></p>
+                <div class="fade" id="fade">
+
+                </div>
+            </div>
+            <div class="flex">
+                <div class="mini">
+                    <div class="numbers">
+                        <button class="number" >7</button>
+                        <button class="number">8</button>
+                        <button class="number">9</button>
+                    </div>
+                    <div class="numbers">
+                        <button class="number">4</button>
+                        <button class="number">5</button>
+                        <button class="number">6</button>
+                    </div>
+                    <div class="numbers">
+                        <button class="number">1</button>
+                        <button class="number">2</button>
+                        <button class="number">3</button>
+                    </div>
+                    <div class="numbers">
+                        <button class="number">.</button>
+                        <button class="number">0</button>
+                        <button class="operator">=</button>
+                    </div>
+                </div>
+                <div class="mini">
+                    <div class="operators">
+                        <button id="delete">DEL</button>
+                        <button class="operator">&divide;</button>
+                        <button class="operator">&times;</button>
+                        <button class="operator">‒</button>
+                        <button class="operator">&plus;</button>
+                    </div>
+                </div>
+                <div class="advanced" draggable="true" id="advanced-calc" >
+                    <span id="slide">&lt;</span>
+                    <table id="table">
+                       
+                        <tr>
+                            <td>INV</td>
+                            <td>RAD</td>
+                            <td>%</td>
+                        </tr>
+                        <tr>
+                            <td>sin</td>
+                            <td>cos</td>
+                            <td>tan</td>
+                        </tr>
+                        <tr>
+                            <td>In</td>
+                            <td>log</td>
+                            <td>!</td>
+                        </tr>
+                        <tr>
+                            <td>&pi;</td>
+                            <td>e</td>
+                            <td>^</td>
+                        </tr>
+                        <tr>
+                            <td>(</td>
+                            <td>)</td>
+                            <td>&Sqrt;</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+      
+    var numbers = document.querySelectorAll(".number")
+    var outcome = document.getElementById("outcome")
+    var result = document.getElementById("result")
+    var operators = document.querySelectorAll(".operator")
+    var del = document.getElementById("delete")
+    var fade = document.getElementById("fade")
+    var slide = document.getElementById("slide")
+    var advancedCalc = document.getElementById("advanced-calc")         
+    var counter;
+    var text=""
+    var text2=""
+    var text3=""
+    var num1,num2
+
+    slide.addEventListener("click",function(){ 
+        if(advancedCalc.style.width == "80%"){ 
+            advancedCalc.style.width = "5%"
+            slide.innerHTML = "&lt;"
+        }
+        else{ 
+            advancedCalc.style.width = "80%"
+            slide.innerHTML = "&gt;"
+        }
+    
+    
+})
+
+
+    // .........................................displaying the numbers...........................................................
+    
+    function displayNumber(){ 
+        for(counter = 0; counter <= numbers.length; ++counter){ 
+            numbers[counter].addEventListener("click",function(){ 
+                    if(outcome.innerHTML.charAt(0) == "0"){ 
+                        outcome.innerHTML = ""
+                        result.innerHTML += ""
+                    }
+                  
+                    else if(result.style.top == "-100px"){ 
+                        outcome.innerHTML = ""
+                        result.innerHTML = ""
+                        result.style.top = "0"
+                        outcome.style.opacity = "1"
+                    }
+                    
+                        outcome.innerHTML += this.innerHTML
+                        add()
+                        // result.innerHTML +=  this.innerHTML
+                        del.innerHTML = "DEL"
+                        fade.style.width = "0%"
+                        fade.style.height = "0%"
+                        fade.style.opacity = "0.2"
+                        fade.style.transition = "none"         
+            })
+        }
+    }
+
+
+    function add(){ 
+        var a = outcome.innerHTML;
+        var b = a.split("");
+        var c;
+        var d;
+        for(var i = 0; i <= b.length; ++i){ 
+            if(b[i] == "+" || b[i] == "×" || b[i] == "‒" || b[i] == "÷"){ 
+                c = b[i];
+                d = i;
+                break;
+            }
+        }
+        if(c == "+"){ 
+            var e = a.substring(0,d)
+            var f = Number(e);
+            var g = a.substring(d+1)
+            var h = Number(g);
+            result.innerHTML = f + h
+            
+        }
+       else if(c == "×"){ 
+            var e = a.substring(0,d)
+            var f = Number(e);
+            var g = a.substring(d+1)
+            var h = Number(g);
+            result.innerHTML = f * h
+        }
+        else if(c == "‒"){ 
+            var e = a.substring(0,d)
+            var f = Number(e);
+            var g = a.substring(d+1)
+            var h = Number(g);
+            result.innerHTML = f - h
+        }
+        else if(c == "÷"){ 
+            var e = a.substring(0,d)
+            var f = Number(e);
+            var g = a.substring(d+1)
+            var h = Number(g);
+            result.innerHTML = f / h
+        }
+
+      
+    }
+
+
+    // ......................................................clearing the numbers.........................................................
+
+    function backSpace(){ 
+        del.addEventListener("click",function(){ 
+
+            if(clear()){ 
+                clear()
+            }
+            else{ 
+                var text = outcome.innerHTML
+                var text2 = outcome.innerHTML.charAt(text.length - 1)
+                outcome.innerHTML = text.replace(text2,"")
+                add() 
+                del.innerHTML = "DEL"
+
+               if(text.length == 1){ 
+                outcome.innerHTML = 0
+                result.innerHTML = ""
+                
+             }
+            else if(result.style.top == "-100px"){ 
+                result.innerHTML = ""
+                result.style.top = "0"
+                result.style.color = "grey"
+                result.style.fontSize = "30px"
+                outcome.style.opacity = "1"
+                outcome.innerHTML = 0
+            if(fade.style.width == "0%"){ 
+                fade.style.width = "100%"
+                fade.style.height = "100%"
+                fade.style.opacity = "0"
+                fade.style.transition = "all 750ms ease"
+                
+                }  
+            }
+            }
+            
+          
+           
+        })
+    }
+
+    function clear(){ 
+        del.addEventListener("dblclick",function(){ 
+            outcome.innerHTML=""
+            fade.style.animationPlayState="running"
+            return true
+        })
+        if(del.addEventListener("dblclick",function(){ 
+            outcome.innerHTML = 0
+            result.innerHTML = ""
+            return true
+        })
+        ){ 
+            return true
+        }
+        else{ 
+            return false
+        }   
+    }
+
+    window.onload = function(){ 
+        backSpace();
+        displayNumber();
+        
+    }
+
+    //............................................................giving out the result of the expression.................................
+
+    var operator = (function(){ 
+        for(counter = 0; counter <= operators.length; ++counter){ 
+            operators[counter].addEventListener("click",function(){ 
+                   if(this.innerHTML=="="){ 
+                    outcome.innerHTML += "" 
+                    add()
+                    result.style.top="-100px"
+                    outcome.style.opacity="0"
+                    result.style.color="black"
+                    result.style.fontSize="50px"
+                    del.innerHTML = "CLR"
+
+                  if(outcome.innerHTML == 0){ 
+                    outcome.innerHTML = 0
+                    result.innerHTML = ""
+                    outcome.style.opacity="1"
+                    result.style.top="0"
+                    result.style.color="grey"
+                    result.style.fontSize="30px"
+                    del.innerHTML = "DEL"
+                    }
+                    
+                    
+                   }
+
+                  else if(result.style.top == "-100px"){ 
+                            outcome.innerHTML=result.innerHTML
+                            result.style.top="0"
+                            result.style.color="grey"
+                            result.style.fontSize="30px"
+                            outcome.style.opacity="1"
+                            result.innerHTML=""
+                   }
+                   else{ 
+                            outcome.innerHTML += this.innerHTML
+                            result.style.top="0"
+                            result.style.color="grey"
+                            result.style.fontSize="30px"
+                            outcome.style.opacity="1"
+                   }
+    
+                
+                
+            })
+            
+        }
+        
+    }())
+
+            
+           
+
+</script>
+</html>

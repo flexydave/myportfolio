@@ -1,0 +1,941 @@
+    /* .................................. styling the nav-bar....................................... */
+    *{ 
+        box-sizing: border-box;
+        font-family: cursive;
+        scroll-behavior: smooth;
+    
+    }
+    body,html{ 
+        margin: 0;
+        padding: 0;
+        display: block;
+       
+      
+    }
+    ul{ 
+        list-style-type: none;
+    }
+/* html::-webkit-scrollbar{ 
+    background-color: white;
+}
+html::-webkit-scrollbar-thumb{ 
+    background-color:grey;
+    border-radius: 12px;
+}
+    */
+    nav{ 
+        display:flex;
+        background-color: white;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        padding:0% 1%;
+        position: fixed;
+       
+       
+    }
+    .logo{ 
+        width: 20%;
+        letter-spacing: 5px;
+        font-family: cursive;
+        display: flex;
+        font-size: 20px;
+        margin-top: 10px;
+       
+    }
+    .logo p{ 
+        margin-left: 5%;
+        padding-top: 0%;
+        color: black;
+        font-size: 20px;
+        text-transform:uppercase;
+    }
+    .logo img{ 
+       width: 100px;
+       height: 50px;
+        background-color: transparent;
+        
+        
+    }
+  
+    .links{ 
+        
+        margin-left:20% ;
+        width: 100%;
+        
+        
+    }
+    .links ul li{ 
+        display: inline-block;
+        padding: 0% 5%;
+      
+      
+    }
+    
+    .links ul li a{ 
+        color: grey;
+        text-decoration: none;
+        font-family: cursive;
+        text-transform: capitalize;
+        
+    }
+ 
+    .links ul li a:hover{ 
+        color:red;
+        opacity: 0.8;
+    }  
+  .open{ 
+          display: none;    
+     }
+    
+   
+
+     .modal{ 
+        position: absolute;
+        width: 15%;
+       box-shadow:0 0 30px rgba(0, 0, 0, 0.3) ;
+        top: 60px;
+        /* left: 550px; */
+        /* flex-direction: column; */
+        background-color: white;
+        opacity: 0;
+        transition: all 750ms ease;
+        z-index: -1;
+        /* display: block; */
+       
+     }
+     .modal::before{ 
+        content: "";
+        position: absolute;
+        border: 15px solid black;
+        transition: all 750ms ease;
+        border-color: transparent transparent white transparent;
+        top: -30px;
+        left: 10px;
+     }
+   
+     .modal ul li:hover{ 
+        color: red;
+        opacity: 0.8;
+     }
+     .links ul li:hover .modal{ 
+            opacity: 1;
+            z-index: 1;
+     }
+   
+     .modal ul{ 
+       background-color: white;
+        display: block;
+        width: 100%;
+        list-style-type: circle;
+        padding: 2% auto;
+        color: gray;
+       
+       
+     }
+     .modal ul li{ 
+        /* padding: 5% auto; */
+        line-height:50px;
+        cursor: pointer;
+        color: grey;
+        text-transform: capitalize;
+        display:inline-block;
+        
+     }
+       @media all and (max-width:880px){ 
+            .links{ 
+                float: left;
+                margin:0;
+                width:100%;
+                transition: 0.5s;
+               
+               text-align: center;
+               justify-content: center;
+               height: 0vh;
+               
+            }
+            .open{ 
+               position: absolute;
+               left: 80%;
+                top: 10%;
+               display: block;
+            }
+            .bi-list,.bi-x{ 
+                color: black;
+                font-size: 40px;
+                cursor: pointer;
+            }
+            .links ul{ 
+                position: relative;
+                left: -2000px;
+            }
+            .modal ul{ 
+                left: 0;
+              
+
+            }
+            .links ul li{ 
+                display: block;
+                padding-top: 5% ;
+                text-align: center;
+                width: fit-content;
+                
+            }
+            
+            nav{ 
+                flex-direction: column;
+              
+                
+                
+            }
+            .logo{ 
+                width: 50%;
+                flex-direction: column;
+            }
+            .modal{ 
+                width: 80%;
+            }
+         
+       }
+       /* ................................styling the home page....................................... */
+#home{ 
+    background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)), url("./images/house1.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-attachment: fixed;
+    color: white;
+   padding-bottom: 25%;
+   position: absolute;
+   top: 10%;
+   z-index: -1;
+   height:100vh;
+   border-bottom: 2px solid whitesmoke;
+   overflow: hidden;
+  
+    
+}
+ .header{ 
+    width: 100%;
+   margin:15% 0% 0% 10% ;
+
+   
+}
+ .header h1{ 
+    text-transform: capitalize;
+    font-size: 40px;
+    font-family: cursive;
+    color: black;
+}
+#home form .flex{ 
+    display: flex;
+    margin-left:10%;
+    z-index: 1;
+    width: 100%;
+}
+#home form .flex .mini{ 
+
+     
+    display: flex;
+    width: 25%;
+    color: grey;
+    border-radius: 5px;
+    padding:0.5% ;
+    text-transform: capitalize;
+    cursor: pointer;
+    flex-direction: column;
+    z-index: 1;
+    background-color: transparent;
+}
+.mini input,select{ 
+    padding: 8% 2%;
+    border-radius: 5px;
+    outline: none;
+    border:none;
+    display: block;
+}
+
+
+
+.bi-search{ 
+    position: relative;
+    top:-50px;
+    left: 80%;
+    font-weight:bolder;
+}
+.mini .bi-search:hover{ 
+    color: black;
+}
+
+
+@media screen and (max-width:880px){ 
+    #home form .flex{ 
+        flex-direction: column;
+        width: 100%;
+    }
+    #home form .flex .mini{ 
+        width:80%;
+    }
+    #home{ 
+        height: auto;
+    }
+    
+    .bi-search{ 
+        
+        top: -50px;
+    }
+}
+
+/* ..................................................styling the feature page............................................ */
+#features{ 
+    position:absolute;
+    color: grey;
+    top: 110%;
+    z-index: -1;
+    width:100%;
+    overflow: hidden;
+    
+}
+.carousel1{ 
+    width: 1000px;
+    margin: 0% auto;
+    overflow: hidden;
+    overflow-x:scroll;
+    position: relative;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    
+}
+
+
+.carousel1::-webkit-scrollbar{ 
+    background-color: #cda45e;
+    background-color: white;
+}
+
+.carousel1::-webkit-scrollbar-thumb{ 
+    background-color: grey;
+    opacity: 0.1;
+    border-radius: 20px;
+}
+#features .carousel1 .flex .mini{ 
+    width:400px;
+   cursor: pointer;
+    position: relative;
+    margin: 0% 2%;
+    padding: 2%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+#features .carousel1 .flex{ 
+    width:100%;
+    margin: 2% auto;
+   display: flex;
+   position: relative;
+   scroll-snap-align: start;
+   
+   
+}
+#features .carousel1 .flex .mini img{ 
+    border-radius: 5px;
+    width:100%;
+    z-index: 1;
+    margin-bottom: 5%;
+}
+ .details{ 
+    text-align:left;
+    justify-content: center;
+   position: relative;
+    padding: 2%;
+  transition: 0.5s;
+ width: 100%;
+ color: gray;
+ text-transform: capitalize;
+  
+}
+ .details p:nth-child(1){ 
+    color: black;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.details p:nth-child(4){ 
+    color: red;
+    opacity: 0.8;
+}
+.details p:nth-child(5){ 
+    color: red;
+    opacity: 0.8;
+}
+ .details ul li{ 
+   list-style: none;
+    text-align: left;
+    
+    
+    
+}
+.count-down{ 
+    width: 90%;
+    margin: 3% auto;
+  
+    
+ 
+}
+.flex2{ 
+    
+    display: flex;
+    height: auto;
+    position: relative;
+    background-color:rgb(37, 37, 37);
+  
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    margin: 0% auto;
+}
+.count-down .flex2 .mini2{ 
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    display: block;
+    border-left: 2px solid rgb(59, 59, 59);
+    padding: 3% 5%;
+    width: 100%;
+  
+    
+}
+.count-down .flex2 .mini2:nth-child(4){ 
+    border-right: none;
+}
+/* .bi-house-fill{ 
+    font-size: 200%;
+} */
+@media screen and (max-width:880px){ 
+    #features{ 
+        top: 700px;
+        padding-top: 10%;
+        background-size: cover;
+        width: 100%;
+    
+    }
+    #features .carousel1 .flex { 
+        flex-direction: column;
+    }
+    #features .carousel1 .flex .mini{ 
+        width: 80%;
+        margin: 5% auto;
+        
+        
+    }
+    .carousel1{ 
+        flex-direction: column;
+        width:100%;
+    }
+    .count-down .flex2{ 
+        flex-direction: column;
+        width: 100%;
+        margin: 0% auto;
+        border-radius: 5px;
+    }
+    .count-down .flex2 .mini2{ 
+        margin: 0% auto;
+        width: 100%;
+        
+        border: none;
+    }
+}
+
+
+/* ...................................styling the locations page............................................. */
+
+#locations{ 
+    background-color: white;
+    text-align: center;
+    padding: 5%;
+}
+#locations .header{ 
+    
+    margin-top:10%;
+    margin-left: 0%;
+    text-transform: capitalize;
+    width: 100%;
+    color: grey;
+}
+
+.flex3{ 
+    display: flex;
+    width: 100%;
+    font-size: 20px;
+    margin-top: 5%;
+    color: white;
+}
+.flex3 .mini3:nth-child(1){ 
+background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.8)),url("./images/city2.jpg");
+background-size:98%;
+
+width: 30%;
+padding: 5%;
+background-repeat: no-repeat;
+transition: 0.5s;
+margin-left: 2%;
+cursor: pointer;
+}
+.flex3 .mini3 h2{ 
+    font-size: 30px;
+}
+.flex3 .mini3:nth-child(2){ 
+    background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.8)),url("./images/city1.jpg");
+    background-size:98%;
+    background-attachment:fixed;
+    width: 70%;
+    padding: 5%;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+    margin-left: 2%;
+    cursor: pointer;
+    }
+    .flex3 .mini3:hover{ 
+        background-size:100%;
+       
+    
+    }
+    .flex3:nth-child(2) .mini3:nth-child(1){ 
+        background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.8)),url("./images/city4.jpg");
+        background-size:98%;
+        background-clip: border-box;
+        width: 30%;
+        padding: 5%;
+        background-repeat: no-repeat;
+        transition: 0.5s;
+        margin-left: 2%;
+        cursor: pointer;
+        }
+        .flex3:nth-child(2) .mini3:nth-child(2){ 
+            background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.8)),url("./images/city3.jpg");
+            background-size:98%;
+            background-attachment: fixed;
+         background-clip: border-box;
+            background-position:35% 80%;
+            width: 70%;
+            padding: 5%;
+            background-repeat: no-repeat;
+            transition: 0.5s;
+            margin-left: 2%;
+            cursor: pointer;
+            }
+
+.flex3 .mini3:nth-child(1):hover,.flex3 .mini3:nth-child(2):hover,.flex3:nth-child(2) .mini3:nth-child(1):hover,.flex3:nth-child(2) .mini3:nth-child(2):hover{ 
+    background-size:100%;
+   
+}
+.dream{ 
+    margin: 10% auto;
+    width: 1000px;
+
+    scroll-snap-type: x mandatory;
+    position: relative;
+    transition: all 750ms ease;
+   overflow:hidden;
+}
+.dream h2{ 
+    font-size: 40px;
+    color: black;
+    background-color: white;
+    width:fit-content;
+    padding: 2%;
+    text-transform: capitalize;
+    margin: 0% auto;
+    width: 100%;
+}
+.grid{ 
+   /* width: 1000px;
+    text-transform: capitalize;
+  
+    position: relative;
+    transition: all 750ms ease;
+   overflow: hidden;
+   float: left; */
+
+   scroll-snap-align: start;
+   position: relative;
+   height: 100%;
+   float: left;
+}
+.grid .info{ 
+    display: flex;
+    margin: 0% auto;
+    /* text-align: center; */
+    
+    /* justify-content: space-between; */
+    font-size: 120%;
+    width: 100%;
+}
+.grid .info .split{ 
+    width: 100%;
+    margin: 0% auto;
+}
+.grid .info .split h1{ 
+    font-size:125%;
+}
+.grid .info .split h1{ 
+    color: black;
+}
+
+
+.grid .image img{ 
+    width: 1000px;
+   
+   float: left;
+  
+   
+}
+
+.carousel{ 
+    display: flex;
+    width: 1000%;
+    margin: 0% auto;
+    padding: 0%;
+    left: 0;
+
+ overflow: hidden;
+  scroll-snap-type: x mandatory;
+  transition: all 750ms ease;
+  position: relative;
+
+}
+#slider #prev,#slider #next{ 
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    font-size: 30px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%);
+    transition: all 150ms ease;
+}
+#slider #prev{ 
+    left: 10px;
+}
+#slider #next{ 
+    right: 10px;
+}
+#slider #prev:hover,#slider #next:hover{ 
+    background-color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0;
+    cursor: pointer;
+}
+
+@media screen and (max-width:880px){ 
+    .flex3{ 
+        flex-direction: column;
+    }
+    .flex3:nth-child(2) .mini3:nth-child(1),.flex3:nth-child(2) .mini3:nth-child(2){ 
+        width: 100%;
+        margin: 5% auto;
+        
+    }
+    .flex3 .mini3:nth-child(2),.flex3 .mini3:nth-child(1){ 
+        width: 100%;
+        margin: 5% auto;
+        background-attachment: local;
+    }
+    .grid .info{ 
+        flex-direction: column;
+        margin: 0% auto;
+        width: 100%;
+        text-align:justify;
+    }
+    .grid .info .split{ 
+        width:100%;
+        margin: 0% auto;
+    }
+    .responsive{ 
+        width: 100%;
+        overflow:hidden;
+    }
+    .dream h2{ 
+        margin:0% auto;
+       
+        width: 100%;
+    }
+    .dream{ 
+        width: 100%;
+        
+    }
+
+    .grid .image{ 
+        width: 100%;
+    }
+    .grid .image img{ 
+        width:1000px;
+        height: 500px;
+    }
+   
+}
+
+
+#feedbacks{ 
+    background-color:rgb(221, 221, 226);
+    padding: 5%;
+    width: 100%;
+    text-align: center;
+}
+#feedbacks .header{ 
+  width:100%;
+    margin: 0% 35%;
+    text-align: center;
+    
+}
+#feedbacks .header h1{ 
+    font-size: 155%;
+    color: black;
+    background-color: white;
+    width:fit-content;
+    padding: 2%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+   
+}
+#feedbacks .header p{ 
+    text-align: center;
+    font-size: 120%;
+   
+}
+.flex4{ 
+    width: 100%;
+    margin-top: 10%;
+    font-size: 20px;
+    display: flex;
+    width: 100%;
+}
+.flex4 .mini4{ 
+    
+    margin-left: 5%;
+}
+.flex4 .client{ 
+    width: 100%;
+    background-color: white;
+    padding: 5%;
+    position: relative;
+    box-shadow: 2px 2px 2px 2px rgb(197, 194, 194);
+}
+.client::after{ 
+    content: "";
+    border: 20px solid black;
+    position:relative;
+    top: 60px;
+    left: -150px;
+    /* bottom:3%;
+    left: 8%; */
+    border-color: white transparent transparent transparent;
+    position:relative;
+}
+.person{ 
+    display: flex;
+    width:100%;
+}
+.person>div{ 
+    width: 100%;
+    
+}
+.person>div>img{ 
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-top: 20%;
+    margin-left: 30%;
+}
+.person>div>h3{ 
+    color: red;
+    font-size: 20px;
+    opacity: 0.8;
+}
+.person>div>p{ 
+    color: grey;
+    font-size: 16px;
+}
+
+@media screen and (max-width:880px){ 
+    
+    .flex4{ 
+        flex-direction: column;
+        margin: 0% 5%;
+    }
+    .flex4 .mini4{ 
+        margin-top: 5%;
+        width: 100%;
+      
+    }
+    #feedbacks{ 
+        margin: 0% auto;
+    }
+    .flex4 .client{ 
+        width: 80%;
+    }
+    #feedbacks .header{ 
+        width: 100%;
+        margin: 5% auto;
+    }
+   
+    .person{ 
+        
+        width:70%;
+    }
+}
+
+/* .....................................................contact-us.............................................. */
+#contact{ 
+  
+  width: 100%;
+}
+#contact .map{ 
+    
+    width: 70%;
+}
+.flex5{ 
+    display: flex;
+   
+   
+}
+.address{ 
+    background-color:rgb(37, 37, 37);
+    padding: 3%;
+    text-align: center;
+    justify-content: center;
+    width: 30%;
+    color: white;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.address>.header>h3{ 
+    font-size: 30px;
+    
+}
+.address>.header>h3::after{ 
+    content: "";
+    width: 20%;
+    height: 0.5vh;
+    background-color: white;
+    display: block;
+    border-radius: 2px;
+    margin-left: 40%;
+    margin-top: 2%;
+}
+@media screen and (max-width:880px){ 
+    .flex5{ 
+        flex-direction: column;
+        margin: 0% auto;
+    }
+   #contact .map,.address{ 
+        width: 100%;
+        text-align: center;
+    }
+    .address{ 
+        padding: 0% auto;
+        text-align: left;
+    }
+    .address>.header>h3::after{ 
+        margin: 0%;
+    }
+}
+.footer{ 
+    padding: 5%;
+    padding-bottom: 0%;
+}
+.flex6{ 
+    width: 100%;
+    display: flex;
+}
+.flex6 .mini6{ 
+    width: 100%;
+    text-transform: capitalize;
+    color: black;
+    margin: 2%;
+}
+.flex6 .mini6 p{ 
+    padding-top: 15%;
+    color: grey;
+}
+.flex6 .mini6 h3{ 
+    font-size: 30px;
+}
+.flex6 .mini6 ul li{ 
+    
+    padding: 2%;
+}
+.flex6 .mini6 ul li a{ 
+    color: grey;
+    text-decoration: none;
+}
+
+.flex6 .mini6 ul li a:hover{ 
+    color: red;
+    opacity: 0.8;
+}
+.mini6 span{ 
+    font-size: 25px;
+    margin: auto 5%;
+    color: grey;
+    cursor: pointer;
+}
+
+.mini6 span:hover{ 
+    color: red;
+    opacity: 0.8;
+}
+ 
+@media screen and (max-width:880px){ 
+    .flex6{ 
+        flex-direction: column ;
+    }
+    .flex6 .mini6{ 
+        width: 100%;
+    }
+}
+.mini6 .bi-arrow-up-circle-fill{ 
+    position: relative;
+    top: 20px;
+    left: 50px;
+    font-size:40px;
+    color: red;
+    opacity: 0;
+    animation: fade 1.5s infinite;
+    /* background-color: blue; */
+}
+@keyframes fade{ 
+    from{ 
+        opacity: 0;
+    }
+    to{ 
+        opacity: 1;
+    }
+}
+
+.arrows{ 
+    display: flex;
+   
+    position:absolute;
+    top: 2600px; 
+   color: black;
+    font-size: 40px;
+    
+}
+.arrows span{  
+    cursor: pointer;
+  
+}
+
+.arrows span:nth-child(2){ 
+  margin-left: 900px;
+}
+.mini6 .logo{ 
+    display: flex;
+    justify-content: space-between;
+}
+.mini6 .logo p{ 
+    margin-left: 15%;
+  
+    color: black;
+    
+}

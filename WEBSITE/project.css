@@ -1,0 +1,51 @@
+.exchange{ 
+    font-family: cursive;
+    color: grey;
+    font-size: 18px;
+    font-weight: 900;
+}
+.exchange img{ 
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 570px;
+    left: 200px;
+}
+
+.nav{ 
+    display: flex;
+    margin-left: 30px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: black;
+    margin: 0;
+}
+.link{ 
+    margin-left: 70px;
+}
+.links{ 
+    display: flex;
+    margin-left: 500px;
+}
+.link a{ 
+    color: grey;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-family: cursive;
+}
+.link a:hover{  
+    color: white    ;
+}
+
+
+.container{ 
+    background-image: url("./image/currecy10.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    width: 100%;
+}

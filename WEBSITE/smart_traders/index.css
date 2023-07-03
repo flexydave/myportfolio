@@ -1,0 +1,585 @@
+body{ 
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+*{ 
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+}
+
+.home{ 
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url("../image/background.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    padding: 2% 0;
+    width: 100%;
+   background-attachment: fixed; 
+    /* background-position: 80%; */
+
+}
+.home>img{ 
+    position: absolute;
+    top: 200px;
+    right: 0;
+    width:40%;
+    /* height: 500px; */
+   
+}
+.active{
+    color:rgb(119, 119, 240) ;
+}
+.container{ 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.nav{ 
+    width: 100%;
+    margin: 0%;
+    padding: 2% auto;
+    display: grid;
+  
+   
+  
+}
+.nav .contact-us .visit{ 
+    display: flex;
+    color: white;
+    margin-left:60%;
+   
+   
+    
+}
+.contact-us{ 
+    /* border-bottom: 2px solid rgb(9, 9, 24); */
+    padding-bottom: 2%;
+   
+    
+    
+}
+
+.nav .contact-us .visit .media{ 
+    border: 1px solid white;
+    width: 30%;
+    text-transform:uppercase;
+    text-align: center;
+    margin-left: 2%;
+    font-weight: bold;
+    padding: 0;
+    cursor: pointer;
+    font-size: 10px;
+    transition: all 750ms ease;
+    margin-top: 5px;
+    
+}
+.media p a{ 
+    font-size: 9px;
+}
+
+.nav .contact-us .visit .media:hover{ 
+    background-color: rgb(119, 119, 240);
+    
+}
+.nav .contact-us .visit .media:hover p a{ 
+    color:white;
+}
+
+.links{ 
+    display: flex;
+    color: white;
+    /* width: 100%;
+    margin: 5% auto; */
+    background-color: rgba(8, 8, 29,0.9);
+    position:fixed;
+    z-index:1;
+    transition: 0.5s;
+    box-shadow: 0 0 30px rgb(1, 1, 5);
+   width: 100%;
+   top: 100px;
+}
+.links .logo{ 
+    width: 100%;
+    text-transform: capitalize;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-left: 5%;
+    display: flex;
+}
+.links .logo img{ 
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 100%;
+    margin:2%;
+}
+.links ul{ 
+    width: 100%;
+    margin-left: 10%;
+}
+.links ul li{ 
+    display: inline-block;
+    padding: 0% 2%;
+}
+.links ul li::after{ 
+    content: "";
+    display: block;
+    width: 0%;
+    height:4px;
+    border-radius:25px;
+    background-color:rgb(119, 119, 240) ;
+    transition:0.5s;
+    margin: 0% auto;
+}
+
+.links ul li:hover::after{ 
+    width: 100%;
+}
+ a{ 
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    text-transform: uppercase;
+    transition: all 750ms ease;
+    font-size: 10px;
+    
+    
+}
+
+ a:hover{ 
+    color: rgb(119, 119, 240) ;
+   
+}
+
+.bar{ 
+    cursor: pointer;
+    display: none;
+}
+.bi-list,.bi-x{ 
+    font-size: 40px;
+    
+}
+
+
+@media all and (max-width:880px){ 
+    .nav .contact-us .visit{ 
+        
+        margin: 2% 5%;
+    }
+    .nav .contact-us .visit .media{ 
+        width: 100%;
+    }
+
+    .links ul li{ 
+        display: block;
+        padding: 20px;
+    }
+
+    .links .logo{ 
+        width: 100%;
+        /* margin: 0% 2%; */
+    }
+    
+    .links{ 
+        /* margin-top:15%; */
+        width: 100%;
+        flex-direction: column;
+        height: 10%;
+        transition: all 750ms ease;
+    }
+    .links ul{ 
+        position: absolute;;
+        left: 1000px;
+        top: 50px;
+        transition: all 750ms ease;
+    }
+    .bar{ 
+        position: absolute;
+        right: 0;
+        top: 10px;
+        display: block;
+        cursor: pointer;
+    }
+    .links ul li:after{ 
+        margin: 0%;
+    }
+
+    .links ul li:hover::after{ 
+        width: 10%;
+    }
+    
+}
+
+.home .content{ 
+    width: 100%;
+    text-align:center;
+   
+    color: white;
+    margin: 200px auto;
+    
+}
+ .home .content h1{ 
+    width: 100%;
+    text-transform: capitalize;
+}
+ .content .visit, .footer .visit{ 
+    display: flex;
+    width: 70%;
+    margin:5% 30% auto;
+    text-align: center;
+}
+ .home .content p{ 
+    font-size: 18px;
+    font-weight: bolder;
+}
+ .content .visit .media, .footer .visit .media{ 
+    border: 1px solid white;
+    width: 20%;
+    text-transform:uppercase;
+    text-align: center;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    padding: 0;
+    cursor: pointer;
+    transition: all 750ms ease;
+}
+.content .visit .media p,.footer .visit .media p{ 
+    font-size: 14px;
+}
+
+.content .visit .media:hover,.footer .visit .media:hover{ 
+    background-color: rgb(119, 119, 240);
+    
+}
+ .header{ 
+    text-align: center;
+    width: 100%;
+    text-transform: capitalize;
+    margin-top: 5%;
+    font-size:14px;
+    font-weight:900;
+}
+.trade .flex{ 
+    width: 100%;
+    display: flex;
+    margin: 0% auto;
+    position:relative;
+    bottom: -300px;
+    transition: all 750ms ease;
+    z-index: -1;
+    
+   
+}
+.trade .flex .mini{ 
+    width:50%;
+    text-align: center;
+    margin: 5% auto;
+    
+}
+
+
+.trade .flex .mini h1{ 
+    padding-top: 20px;
+    font-weight: 700;
+}
+.trade .flex .mini p{ 
+    font-weight: 700;
+}
+
+
+.trade .flex .mini .icon span{ 
+    border: 1px solid rgb(119, 119, 240);
+    border-radius: 100px;
+    color:rgb(119, 119, 240);
+    font-size: 30px;
+    cursor: pointer;
+    padding: 15px;
+    text-align: center;
+    transition: all 750ms ease;
+}
+
+.trade .flex .mini .icon span:hover{ 
+    background-color: rgb(119, 119, 240);
+    color: white;
+}
+.trade .flex .mini h1{ 
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.about{ 
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url("../image/background2.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-attachment: fixed;
+    position: relative;
+    bottom:-300px;
+    transition: all 750ms ease;
+    background-position: 80%;
+}
+.about .content{ 
+    font-family: sans-serif;
+    font-weight: normal;
+}
+.about .content p{ 
+    font-size: 20px;
+}
+.about .media{ 
+    border: 1px solid white;
+    width: 20%;
+    text-transform:uppercase;
+    text-align: center;
+   margin: 2% auto;
+    padding: 0;
+    cursor: pointer;
+    transition: all 750ms ease;
+}
+.about .media p{ 
+    font-size: 14px;
+}
+.about .media:hover{ 
+    background-color: rgb(119, 119, 240);
+    
+}
+
+
+@media all and (max-width:880px){ 
+
+    .flex{ 
+        flex-direction: column;
+        width: 100%;
+    }
+    .trade .flex .mini{ 
+        width: 100%;
+        
+    }
+
+    .home .content{ 
+     
+        justify-content:left;
+        margin: 200px auto;
+        width: 100%;
+     }
+     .about .content{ 
+        margin: 5%;
+     }
+ 
+     .content .visit,.footer .visit{ 
+         flex-direction: column;
+         width: 100%;
+         margin: 0% auto;
+         
+     }
+     .content .visit .media,.footer .visit .media{ 
+         margin: 2% auto;
+         width: 50%;
+       
+     }
+     .about{ 
+         width: 100%;
+         margin: 0% auto; 
+         padding:1%;
+     }
+     .about .media{ 
+         width: 50%;
+         margin: 0% auto;
+     }
+     
+}
+
+
+.contact{ 
+    width: 100%;
+    margin: 10% auto;
+}
+.contact .flex{ 
+    margin: 0% 3%;
+    display: flex;
+    justify-content: space-between;
+}
+.contact .flex .mini{ 
+    margin:0% 1%;
+    box-shadow: 0 0 30px rgba(8, 8, 29,0.9) ;
+    padding: 20px;
+    border: 2px solid rgba(8, 8, 29,0.9);
+    border-radius: 20px;
+    background-color:rgba(8, 8, 29,0.9) ;
+    width: 100%;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: all 750ms ease;
+}
+.contact .flex .mini:hover{ 
+    box-shadow: 0 0 30px rgb(119, 119, 240);
+    transform: translateY(-30px);
+    
+}
+.contact .flex .mini span{ 
+    font-size: 30px;
+}
+.contact .flex .mini p{ 
+    font-size: 18px;
+}
+.contact .form{ 
+    width: 90%;
+    margin: 10% auto;
+    display: flex;
+    padding: 2%;
+    justify-content: space-between;
+    background-color:rgba(8, 8, 29,0.9);
+    border-radius: 20px;
+}
+.contact .form form{ 
+    width: 100%;
+    margin: 0% auto;
+}
+
+.form form .input .flex{ 
+    width: 100%;
+    display: flex;
+    margin: 0% auto;
+}
+.form form .input .flex .mini{ 
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    display: grid;
+    text-align: left;
+    margin: 0%;
+    width: 100%;
+    
+}
+.contact .form .content{ 
+   width: 100%;
+   padding: 0% auto;
+   text-align: left;
+}
+.contact .form .content h1{ 
+    text-transform: uppercase;
+}
+.contact .form .content,form{ 
+    margin: 0% 5%;
+}
+.form form .input .flex .mini input,textarea{ 
+    width:100%;
+    padding: 2%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    border-bottom: 2px solid rgb(119, 119, 240);
+    margin-top: 10%;
+    transition: all 750ms ease;
+}
+.form form .input .flex .mini:hover{ 
+    transform: translateY(0px);
+}
+.form form .input .flex .mini input:focus,textarea:focus{ 
+     background-color:rgba(8, 8, 29,0.9) ;
+     box-shadow: 0 0 5px rgb(119, 119, 240);
+}
+.form form .input .flex .mini input[type="submit"]{ 
+    background-color:rgb(119, 119, 240);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.form form .input .flex .mini input::placeholder{ 
+    font-size:14px;
+}
+.form .content .social-media{ 
+    text-align: left;
+}
+
+@media all and (max-width:880px){ 
+    .contact .flex .mini{ 
+        margin: 5% auto;
+        width: 70%;
+        
+    }
+    .contact .form{ 
+        flex-direction: column;
+        margin: 2% auto;
+        width: 90%;
+    }
+    .form form .input .flex .mini input,textarea{ 
+        width: 80%;
+    }
+    .contact .form .content{ 
+        width: 80%;
+    }
+    .contact .flex{ 
+        margin: 0% auto;
+    }
+}
+.footer{
+    /* background-color: rgb(49, 49, 49); */
+    background-color: rgba(8, 8, 29,0.9);
+    width: 100%;
+    color: white;
+    margin: 0;
+    padding: 0;
+ }
+ .footer .flex{ 
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    padding-top: 5%;
+ }
+ 
+ .mini ul li{ 
+    list-style-type: none;
+    padding-top: 2%;
+ }
+ 
+ .mini ul li:nth-child(1){ 
+    font-size:20px;
+    text-transform: capitalize;
+ }
+ .social-media{ 
+    text-align: center;
+    padding: 2%;
+ }
+ .social-media span{ 
+    margin-left: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+ }
+ .social-media span:hover{ 
+    color: rgb(119, 119, 240);
+ }
+ .backToTop{ 
+    position: fixed;
+    width: 100%;
+    padding: 2%;
+    left: 90%;
+    top: 90%;
+    opacity: 0;
+    transition: 0.5s;
+ }
+ .backToTop span{ 
+    font-size: 20px;
+    border: 2px solid rgb(119, 119, 240);
+    color: rgb(119, 119, 240);
+    padding: 10px;
+    border-radius: 50px;
+    transition: 0.5s;
+ }
+ .backToTop span:hover{ 
+    background-color: rgb(119, 119, 240);
+    color: white;
+ }
+
+ @media all and (max-width:880px){ 
+    .backToTop{ 
+        left: 85%;
+     }
+ }

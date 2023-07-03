@@ -1,0 +1,193 @@
+.home{ 
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url("../image/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2% 0%;
+    width: 100%;
+   background-attachment: fixed;
+   background-position: 80%;
+}
+.home .content h1{ 
+    font-size: 40px;
+    
+}
+.home .content{ 
+    padding: 0;
+    margin: 200px auto;
+    position: relative;
+
+}
+.home .content .visit .media p a:hover{ 
+    color: white;
+}
+.container>img{ 
+    position: absolute;
+    width: 40%;
+    top: 170px;
+    right: 0;
+}
+.container .trade{ 
+    width: 80%;
+    margin: 5% auto;
+    /* margin-top: -200px; */
+    position: relative;
+    top: -150px;
+    
+}
+.container .trade ul{ 
+    width: 100%;
+    text-align: center;
+    
+}
+.container .trade ul li{ 
+    display: inline-block;
+    padding: 2%;
+    list-style-type: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-weight:bolder;
+    transition: all 750ms ease;
+    /* height: 0%; */
+    border-bottom: 2px solid blue;
+    border-color: transparent;
+    line-height: 0%;
+    color: rgb(119, 119, 240);
+    opacity: 0.8;
+}
+.trade .category{ 
+    box-shadow: 0 0 2px grey;
+    background-color: white;
+    border-radius: 5px;
+    opacity: 1;
+    width: 100%;
+
+}
+.trade .category ul{ 
+    text-align: left;
+}
+.trade .category ul li{ 
+    line-height: normal;
+    text-align: left;
+    cursor: text;
+    padding: 2% 7%;
+    color: rgb(66, 66, 66);
+    font-weight: 900;
+    opacity: 1;
+}
+.trade .category ul li span{ 
+    color: grey;
+}
+
+table{ 
+    color: black;
+    padding: 2%;
+    width: 100%;
+    
+    
+}
+.table tr td p b{ 
+    color: grey;
+    font-size: 14px;
+}
+table tr,th,td{ 
+    padding: 2% 5%;
+    text-transform: capitalize;
+    text-align: left;    
+}
+
+table tr td b{ 
+    display: none;
+}
+table tr td img{ 
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-inline: 20px;
+    margin-top: 15px;
+}
+
+table tr td:nth-child(4) img{ 
+    width:auto;
+   
+}
+
+table tr td:nth-child(1){ 
+    display: flex;
+    width: 100%;
+}
+table tr td:nth-child(4),table tr td:nth-child(5){ 
+    background-color: rgb(112, 235, 133);
+    width: 15%;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+   
+}
+table tr td:nth-child(5){ 
+    background-color: rgb(238, 112, 81);
+}
+.container .trade>ul li:hover{ 
+    color:rgb(119, 119, 240) ;
+    transition: all 750ms ease;
+    opacity: 1;
+}
+.container .trade ul li:hover::after{ 
+    width: 100%;
+}
+
+.trade>.flex{ 
+    position: relative;
+    top:0;
+    display: flex;
+    width: 100%;
+    opacity: 1;
+    bottom: 0;
+}
+.trade>.flex .mini{ 
+    width: 100%;
+}
+.trade>.flex .mini img{ 
+    width: 20%;
+}
+
+
+.exc{ 
+    cursor: pointer;
+}
+
+@media all and (max-width:880px){ 
+    .container .trade ul li{ 
+        padding: 7%;
+        /* display: block; */
+        margin: 0% auto;
+        
+    }
+    .container .trade ul{ 
+        text-align: left;
+        width: 100%;
+        margin: 0% auto;
+    }
+    table tr td:nth-child(2),table tr td:nth-child(3),table tr th:nth-child(2),table tr th:nth-child(3),table tr td:nth-child(4),table tr th:nth-child(4){ 
+        display: none;
+    }
+    table tr td b{ 
+        display:block;
+    }
+    table{ 
+        width: 100%;
+    }
+    table tr,th,td{ 
+       padding: 5%;
+    }
+   table tr td:nth-child(4),table tr td:nth-child(5){ 
+        width: 50%;
+    }
+    .container .trade{ 
+        top: 0;
+    }
+    .container>img{ 
+       opacity: 0;
+    }
+
+}

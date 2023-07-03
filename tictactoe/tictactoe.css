@@ -1,0 +1,132 @@
+*{ 
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body,html{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{ 
+    background-color: darkblue;
+}
+.container{ 
+    position: relative;
+    margin: 5% auto;
+    justify-content:center; 
+    width: 50%;
+    background-color: rgb(98, 12, 211);
+    border-radius: 15px;
+    padding: 2%;
+    box-shadow: 5px 5px 20px;
+}
+
+.profiles{ 
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding: 5% auto;
+    position: relative;
+}
+.profileName p{ 
+    color: white;
+    text-transform: capitalize;
+  
+}
+.profiles>p{ 
+    position: absolute;
+    top: 100%;
+    left: 20%;
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+    /* transition: 0.5s; */
+}
+.profiles .gamePlayer{ 
+    width: 50%;
+    text-align: center;
+    background-color: rgb(6, 6, 59);
+    margin: 0 5%;
+    padding: 1%;
+    transition: 0.5s all ease;
+    border-radius: 10px;
+    /* border: 1px dashed white; */
+}
+.profiles .gamePlayer:nth-child(1){ 
+    border: 1px dashed white;
+}
+.profiles .gamePlayer .image img{ 
+    width: 20%;
+    border-radius: 100%;
+}
+.pack{ 
+    width: 100%;
+    margin: 10% auto;
+    border-radius: 15px;
+    background-color: rgb(71, 30, 109);
+    padding: 2%;
+    box-shadow: 5px 5px 20px;
+}
+.flex{ 
+    
+    display: flex;
+    position: relative;
+    height: 100%;
+  
+}
+.flex .mini{ 
+    width: 33.3%;
+    background-color: grey;
+    height: 100px;
+    background-color: rgb(97, 240, 30);
+    background-color: rgb(19, 19, 51);
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    margin: 1% 2%;
+}
+
+span{ 
+    color: yellow;
+    position: relative;
+    top: 20px;
+    font-size: 50px;
+    
+}
+.bi-x-lg{ 
+    color: red;
+  
+}
+ .bi-volume-up-fill,.bi-volume-mute-fill{ 
+    position: relative;
+    top: 0;
+    left: 90%;
+    cursor: pointer;
+ }
+@media all and (max-width:880px){ 
+    .container{ 
+        width: 90%;
+    }
+    .profiles .gamePlayer{ 
+        width: 100%;
+    }
+
+    .flex .mini{ 
+        width: 100%;
+    }
+}
+.bi-arrow-clockwise{ 
+    background-color: rgb(190, 125, 136);
+    border-radius: 100%;
+    padding: 5px;
+    box-shadow: 5px 5px 40px;
+    cursor: pointer;
+    top: 0;
+}
+/* .score{ 
+    position: absolute;
+    top: 0;
+    right: 10%;
+  
+} */

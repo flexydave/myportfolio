@@ -1,0 +1,88 @@
+*{ 
+    box-sizing: border-box;
+}
+body,html{ 
+    margin: 0;
+    padding: 0;
+    
+    
+}
+ 
+.container{ 
+width: 100%;
+
+
+}
+#nav{ 
+top: 0;
+left: 0;
+z-index: 1;
+}
+.grid{ 
+position: relative;
+top: 80px;
+width: 100%;
+
+}
+.grid h1{ 
+font-size: 20px;
+text-transform: capitalize;
+text-align: center;
+width: 100%;
+}
+.grid .flex{ 
+display: flex;
+box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+margin: 3%;
+border-radius: 5px;
+
+}
+.grid .flex .mini{ 
+width: 100%;
+margin-left: 1%;
+cursor: pointer;
+position: relative;
+
+
+}
+.grid .flex .mini:nth-child(1){ 
+display: flex;
+width: 500px;
+height: 800px;
+overflow: hidden;
+scroll-snap-type: x mandatory;
+}
+.grid .flex .mini:nth-child(1) img{ 
+width:500px;
+height: 800px;
+
+scroll-snap-align: start;
+
+}
+
+    
+@media screen and (max-width:880px){ 
+    .grid .flex{ 
+        flex-direction: column;
+        /* margin: 0% auto; */
+        width: 100%;
+        margin-top: 10%;
+    }
+    .flex .grid .mini{ 
+        width:100%;
+        margin:0% auto;
+    }
+    .grid .flex .mini:nth-child(1){ 
+        width:800px;
+
+    }
+    .grid .flex .mini:nth-child(1) img{ 
+        width:800px;
+        height: 1200px;
+    }
+    .grid h1{ 
+        text-align: left;
+        margin-left: 5%;
+    }
+    
+}
